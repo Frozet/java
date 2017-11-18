@@ -4,6 +4,27 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+class FindWay {
+    int point;
+    int k;
+    int numi, numj;
+    FindWay (int point, int k, int numi, int numj) {
+        this.point = point;
+        this.k = k;
+        this.numi = numi;
+        this.numj = numj;
+    }
+
+    public int toCount() {
+        int number = 0;
+        while (number != point) {
+            
+            k++;
+        }
+        return k;
+    }
+}
+
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         String filename = "F://Program Files/data.txt";
@@ -29,7 +50,17 @@ public class Main {
             }
             System.out.println();
         }
+        int K = sc.nextInt();
         int k = 0;
+        for (int i = 0; i < N; i++) {
+            if (i == K) {
+                System.out.println(i + 1 + " " + 0);
+            } else {
+                FindWay p = new FindWay(i, k);
+                p.toCount();
+            }
+        }
+        /*int k = 0;
         int K = sc.nextInt();
         for (int i = 0; i < N; i++) {
             if (i == K - 1) {
@@ -49,6 +80,6 @@ public class Main {
                 }
             }
             k = 0;
-        }
+        }*/
     }
 }
